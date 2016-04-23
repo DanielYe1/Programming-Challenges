@@ -9,8 +9,6 @@ import java.util.Scanner;
 public class Minesweeper {
 
     public static void main(String[] args) {
-
-
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
@@ -37,9 +35,9 @@ public class Minesweeper {
                     if (matrix[i + 1][j + 1] != '*') {
                         int p = 0; // p = 0 to loop correctly
                         matrix[i + 1][j + 1] = 0;
-                        for (int k = -1; k < 2; k++) {
-                            for (int o = -1; o < 2; o++) {
-                                if (matrix[i + 1 + k][j + 1 + o] == '*') {
+                        for (int line = -1; line < 2; line++) {
+                            for (int column = -1; column < 2; column++) {
+                                if (matrix[i + 1 + line][j + 1 + column] == '*') {
                                     p = p + 1;
                                     matrix[i + 1][j + 1] = String.valueOf(p).charAt(0);
                                 }

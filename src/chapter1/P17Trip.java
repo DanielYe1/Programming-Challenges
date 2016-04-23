@@ -2,6 +2,7 @@ package chapter1;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Created by Daniel on 23/04/2016.
@@ -10,6 +11,7 @@ public class P17Trip {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
+
         while (n != 0) {
             LinkedList<Float> money = new LinkedList();
             float sum = 0;

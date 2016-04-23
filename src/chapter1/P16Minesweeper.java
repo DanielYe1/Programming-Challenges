@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by Daniel on 22/04/2016.
  */
-public class Minesweeper {
+public class P16Minesweeper {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

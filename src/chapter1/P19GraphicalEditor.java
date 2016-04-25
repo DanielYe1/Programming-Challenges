@@ -10,6 +10,10 @@ public class P19GraphicalEditor {
         Scanner scanner = new Scanner(System.in);
         char code = scanner.next().charAt(0);
 
+        while (code != 'I'){
+            code = scanner.next().charAt(0);
+        }
+
         if (code == 'I') {
             int linha = scanner.nextInt();
             int coluna = scanner.nextInt();
@@ -58,17 +62,17 @@ public class P19GraphicalEditor {
                     char color = scanner.next().charAt(0);
                     for (int i = px1; i <= px2; i++) {
                         for (int j = py1; j <= py2; j++) {
-                            matrix[i-1][j-1] = color;
+                            matrix[i - 1][j - 1] = color;
                         }
                     }
                 } else if (code == 'F') {
                     int px = scanner.nextInt();
                     int py = scanner.nextInt();
                     char color = scanner.next().charAt(0);
-                    char pixel = matrix[px-1][py-1];
+                    char pixel = matrix[px - 1][py - 1];
                     for (int i = 0; i < linha; i++) {
                         for (int j = 0; j < coluna; j++) {
-                            if (matrix[i][j] == pixel){
+                            if (matrix[i][j] == pixel) {
                                 matrix[i][j] = color;
                             }
                         }

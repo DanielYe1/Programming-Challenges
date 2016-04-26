@@ -184,10 +184,36 @@ public class P23ChecktheCheck {
                                 }
                             }
                         }
-                    case 'R':
-
+                    case 'r':
+                        setPart(matrix,movements.EAST);
+                        setPart(matrix,movements.NORTH);
+                        setPart(matrix,movements.SOUTH);
+                        setPart(matrix,movements.WEST);
                         break;
-
+                    case 'R':
+                        setPart(matrix,movements.EAST);
+                        setPart(matrix,movements.NORTH);
+                        setPart(matrix,movements.SOUTH);
+                        setPart(matrix,movements.WEST);
+                        break;
+                    case 'q':
+                        setPart(matrix,movements.EAST);
+                        setPart(matrix,movements.NORTH);
+                        setPart(matrix,movements.SOUTH);
+                        setPart(matrix,movements.WEST);
+                        setPart(matrix,movements.NORTHEAST);
+                        setPart(matrix,movements.NORTHWEST);
+                        setPart(matrix,movements.SOUTHEAST);
+                        setPart(matrix,movements.SOUTHWEST);
+                    case 'Q':
+                        setPart(matrix,movements.EAST);
+                        setPart(matrix,movements.NORTH);
+                        setPart(matrix,movements.SOUTH);
+                        setPart(matrix,movements.WEST);
+                        setPart(matrix,movements.NORTHEAST);
+                        setPart(matrix,movements.NORTHWEST);
+                        setPart(matrix,movements.SOUTHEAST);
+                        setPart(matrix,movements.SOUTHWEST);
                 }
             }
         }

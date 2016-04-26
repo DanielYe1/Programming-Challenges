@@ -71,149 +71,45 @@ public class P23ChecktheCheck {
                         }
                         break;
                     case 'b':  // work with bugs, bug fix tomorrow;
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i - k) < 2 || (j - k) < 2) { //index out
-                                    break;
-                                }                                   // index out
-                                if (matrix[i - k][j - k] != '.') {
-                                    if (matrix[i - k][j - k] == 'K') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i + k) >= 10 || (j + k) >= 10) {
-                                    break;
-                                }
-                                if (matrix[i + k][j + k] == 'K') {
-                                    System.out.println("bishop check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i - k) <= 2 || (j + k) >= 10) {
-                                    break;
-                                }
-                                if (matrix[i - k][j + k] != '.') {
-                                    if (matrix[i - k][j + k] == 'K') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i + k) >= 10 || (j - k) <= 2) {
-                                    break;
-                                }
-                                if (matrix[i + k][j - k] == 'K') {
-                                    System.out.println("bishop check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
+                        setPart(matrix, movements.NORTHEAST,i,j);
+                        setPart(matrix, movements.NORTHWEST,i,j);
+                        setPart(matrix, movements.SOUTHEAST,i,j);
+                        setPart(matrix, movements.SOUTHWEST,i,j);
                     case 'B':  // work with bugs, bug fix tomorrow;
-                        for (int k = 1; k < 8; k++) {     // northwest
-                            for (int l = 1; l < 8; l++) {
-                                if ((i - k) < 2 || (j - k) < 2) { //index out
-                                    break;
-                                }                                   // index out
-                                if (matrix[i - k][j - k] != '.') {
-                                    if (matrix[i - k][j - k] == 'k') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        for (int k = 1; k < 8; k++) {  // southeast
-                            for (int l = 1; l < 8; l++) {
-                                if ((i + k) >= 10 || (j + k) >= 10) {
-                                    break;
-                                }
-                                if (matrix[i + k][j + k] == 'k') {
-                                    System.out.println("bishop check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
-                        for (int k = 1; k < 8; k++) {  // northeast
-                            for (int l = 1; l < 8; l++) {
-                                if ((i - k) <= 2 || (j + k) >= 10) {
-                                    break;
-                                }
-                                if (matrix[i - k][j + k] != '.') {
-                                    if (matrix[i - k][j + k] == 'k') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i + k) >= 10 || (j - k) <= 2) {
-                                    break;
-                                }
-                                if (matrix[i + k][j - k] == 'k') {
-                                    System.out.println("bishop check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
+                        setPart(matrix, movements.NORTHEAST,i,j);
+                        setPart(matrix, movements.NORTHWEST,i,j);
+                        setPart(matrix, movements.SOUTHEAST,i,j);
+                        setPart(matrix, movements.SOUTHWEST,i,j);
                     case 'r':
-                        setPart(matrix,movements.EAST);
-                        setPart(matrix,movements.NORTH);
-                        setPart(matrix,movements.SOUTH);
-                        setPart(matrix,movements.WEST);
+                        setPart(matrix, movements.EAST,i,j);
+                        setPart(matrix, movements.NORTH,i,j);
+                        setPart(matrix, movements.SOUTH,i,j);
+                        setPart(matrix, movements.WEST,i,j);
                         break;
                     case 'R':
-                        setPart(matrix,movements.EAST);
-                        setPart(matrix,movements.NORTH);
-                        setPart(matrix,movements.SOUTH);
-                        setPart(matrix,movements.WEST);
+                        setPart(matrix, movements.EAST,i,j);
+                        setPart(matrix, movements.NORTH,i,j);
+                        setPart(matrix, movements.SOUTH,i,j);
+                        setPart(matrix, movements.WEST,i,j);
                         break;
                     case 'q':
-                        setPart(matrix,movements.EAST);
-                        setPart(matrix,movements.NORTH);
-                        setPart(matrix,movements.SOUTH);
-                        setPart(matrix,movements.WEST);
-                        setPart(matrix,movements.NORTHEAST);
-                        setPart(matrix,movements.NORTHWEST);
-                        setPart(matrix,movements.SOUTHEAST);
-                        setPart(matrix,movements.SOUTHWEST);
+                        setPart(matrix, movements.EAST,i,j);
+                        setPart(matrix, movements.NORTH,i,j);
+                        setPart(matrix, movements.SOUTH,i,j);
+                        setPart(matrix, movements.WEST,i,j);
+                        setPart(matrix, movements.NORTHEAST,i,j);
+                        setPart(matrix, movements.NORTHWEST,i,j);
+                        setPart(matrix, movements.SOUTHEAST,i,j);
+                        setPart(matrix, movements.SOUTHWEST,i,j);
                     case 'Q':
-                        setPart(matrix,movements.EAST);
-                        setPart(matrix,movements.NORTH);
-                        setPart(matrix,movements.SOUTH);
-                        setPart(matrix,movements.WEST);
-                        setPart(matrix,movements.NORTHEAST);
-                        setPart(matrix,movements.NORTHWEST);
-                        setPart(matrix,movements.SOUTHEAST);
-                        setPart(matrix,movements.SOUTHWEST);
+                        setPart(matrix, movements.EAST,i,j);
+                        setPart(matrix, movements.NORTH,i,j);
+                        setPart(matrix, movements.SOUTH,i,j);
+                        setPart(matrix, movements.WEST,i,j);
+                        setPart(matrix, movements.NORTHEAST,i,j);
+                        setPart(matrix, movements.NORTHWEST,i,j);
+                        setPart(matrix, movements.SOUTHEAST,i,j);
+                        setPart(matrix, movements.SOUTHWEST,i,j);
                 }
             }
         }
@@ -229,144 +125,140 @@ public class P23ChecktheCheck {
         }
     }
 
-    private static void setPart(char[][] matrix, movements part) {
-        for (int i = 2; i < 10; i++) {
-            for (int j = 2; j < 10; j++) {
-                switch (part) {
-                    case NORTHEAST:
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i - k) <= 2 || (j + k) >= 10) {
-                                    break;
-                                }
-                                if (matrix[i - k][j + k] != '.') {
-                                    if (matrix[i - k][j + k] == 'k') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
+    private static void setPart(char[][] matrix, movements part,int i, int j) {
+        switch (part) {
+            case NORTHEAST:
+                for (int k = 1; k < 8; k++) {
+                    for (int l = 1; l < 8; l++) {
+                        if ((i - k) <= 2 || (j + k) >= 10) {
+                            break;
                         }
-                        break;
-                    case NORTHWEST:
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i - k) < 2 || (j - k) < 2) { //index out
-                                    break;
-                                }                                   // index out
-                                if (matrix[i - k][j - k] != '.') {
-                                    if (matrix[i - k][j - k] == 'k') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                    case SOUTHEAST:
-                        for (int k = 1; k < 8; k++) {  // southeast
-                            for (int l = 1; l < 8; l++) {
-                                if ((i + k) >= 10 || (j + k) >= 10) {
-                                    break;
-                                }
-                                if (matrix[i + k][j + k] != '.') {
-                                    if (matrix[i + k][j + k] == 'k') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                    case SOUTHWEST:
-                        for (int k = 1; k < 8; k++) {
-                            for (int l = 1; l < 8; l++) {
-                                if ((i + k) >= 10 || (j - k) <= 2) {
-                                    break;
-                                }
-                                if (matrix[i + k][j - k] != '.') {
-                                    if (matrix[i + k][j - k] == 'k') {
-                                        System.out.println("bishop check");
-                                        break;
-                                    } else {
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                    case NORTH:
-                        for (int k = 1; k < 8; k++) {
-                            if ((i - k) <= 2) {
+                        if (matrix[i - k][j + k] != '.') {
+                            if (matrix[i - k][j + k] == 'k'|| matrix[i - k][j + k] == 'K') {
+                                System.out.println("bishop check");
+                                break;
+                            } else {
                                 break;
                             }
-                            if (matrix[i - k][j] != '.') {
-                                if (matrix[i - k][j] == 'k') {
-                                    System.out.println("rook check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
                         }
-                        break;
-                    case SOUTH:
-                        for (int k = 1; k < 8; k++) {
-                            if ((i - k) >= 10) {
-                                break;
-                            }
-                            if (matrix[i + k][j] != '.') {
-                                if (matrix[i + k][j] == 'k') {
-                                    System.out.println("rook check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
-                        break;
-                    case WEST:
-                        for (int k = 1; k < 8; k++) {
-                            if ((j - k) <= 2) {
-                                break;
-                            }
-                            if (matrix[i][j - k] != '.') {
-                                if (matrix[i][j - k] == 'k') {
-                                    System.out.println("rook check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
-                        break;
-                    case EAST
-                        for (int k = 1; k < 8; k++) {
-                            if ((j + k) <= 10) {
-                                break;
-                            }
-                            if (matrix[i][j + k] != '.') {
-                                if (matrix[i][j + k] == 'k') {
-                                    System.out.println("rook check");
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            }
-                        }
-                        break;
+                    }
                 }
-            }
-
+                break;
+            case NORTHWEST:
+                for (int k = 1; k < 8; k++) {
+                    for (int l = 1; l < 8; l++) {
+                        if ((i - k) < 2 || (j - k) < 2) { //index out
+                            break;
+                        }                                   // index out
+                        if (matrix[i - k][j - k] != '.') {
+                            if (matrix[i - k][j - k] == 'k'|| matrix[i - k][j - k] == 'K') {
+                                System.out.println("bishop check");
+                                break;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            case SOUTHEAST:
+                for (int k = 1; k < 8; k++) {  // southeast
+                    for (int l = 1; l < 8; l++) {
+                        if ((i + k) >= 10 || (j + k) >= 10) {
+                            break;
+                        }
+                        if (matrix[i + k][j + k] != '.') {
+                            if (matrix[i + k][j + k] == 'k'|| matrix[i + k][j + k] == 'K') {
+                                System.out.println("bishop check");
+                                break;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            case SOUTHWEST:
+                for (int k = 1; k < 8; k++) {
+                    for (int l = 1; l < 8; l++) {
+                        if ((i + k) >= 10 || (j - k) <= 2) {
+                            break;
+                        }
+                        if (matrix[i + k][j - k] != '.') {
+                            if (matrix[i + k][j - k] == 'k'|| matrix[i + k][j - k] == 'K') {
+                                System.out.println("bishop check");
+                                break;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            case NORTH:
+                for (int k = 1; k < 8; k++) {
+                    if ((i - k) <= 2) {
+                        break;
+                    }
+                    if (matrix[i - k][j] != '.') {
+                        if (matrix[i - k][j] == 'k'|| matrix[i - k][j] == 'K') {
+                            System.out.println("rook check");
+                            break;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                break;
+            case SOUTH:
+                for (int k = 1; k < 8; k++) {
+                    if ((i - k) >= 10) {
+                        break;
+                    }
+                    if (matrix[i + k][j] != '.') {
+                        if (matrix[i + k][j] == 'k'|| matrix[i + k][j] == 'K') {
+                            System.out.println("rook check");
+                            break;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                break;
+            case WEST:
+                for (int k = 1; k < 8; k++) {
+                    if ((j - k) <= 2) {
+                        break;
+                    }
+                    if (matrix[i][j - k] != '.') {
+                        if (matrix[i][j - k] == 'k'|| matrix[i][j - k] == 'K') {
+                            System.out.println("rook check");
+                            break;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                break;
+            case EAST:
+                for (int k = 1; k < 8; k++) {
+                    if ((j + k) <= 10) {
+                        break;
+                    }
+                    if (matrix[i][j + k] != '.') {
+                        if (matrix[i][j + k] == 'k'|| matrix[i][j + k] == 'K') {
+                            System.out.println("rook check");
+                            break;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-
     }
 
 }
+
+
 

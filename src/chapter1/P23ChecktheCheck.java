@@ -247,11 +247,13 @@ public class P23ChecktheCheck {
                                 if ((i + k) >= 10 || (j + k) >= 10) {
                                     break;
                                 }
-                                if (matrix[i + k][j + k] == 'k') {
-                                    System.out.println("bishop check");
-                                    break;
-                                } else {
-                                    break;
+                                if (matrix[i + k][j + k] != '.') {
+                                    if (matrix[i + k][j + k] == 'k') {
+                                        System.out.println("bishop check");
+                                        break;
+                                    } else {
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -262,11 +264,13 @@ public class P23ChecktheCheck {
                                 if ((i + k) >= 10 || (j - k) <= 2) {
                                     break;
                                 }
-                                if (matrix[i + k][j - k] == 'k') {
-                                    System.out.println("bishop check");
-                                    break;
-                                } else {
-                                    break;
+                                if (matrix[i + k][j - k] != '.') {
+                                    if (matrix[i + k][j - k] == 'k') {
+                                        System.out.println("bishop check");
+                                        break;
+                                    } else {
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -276,13 +280,14 @@ public class P23ChecktheCheck {
                             if ((i - k) <= 2) {
                                 break;
                             }
-                            if (matrix[i - k][j] == 'k') {
-                                System.out.println("rook check");
-                                break;
-                            } else {
-                                break;
+                            if (matrix[i - k][j] != '.') {
+                                if (matrix[i - k][j] == 'k') {
+                                    System.out.println("rook check");
+                                    break;
+                                } else {
+                                    break;
+                                }
                             }
-
                         }
                         break;
                     case SOUTH:
@@ -290,13 +295,14 @@ public class P23ChecktheCheck {
                             if ((i - k) >= 10) {
                                 break;
                             }
-                            if (matrix[i + k][j] == 'k') {
-                                System.out.println("rook check");
-                                break;
-                            } else {
-                                break;
+                            if (matrix[i + k][j] != '.') {
+                                if (matrix[i + k][j] == 'k') {
+                                    System.out.println("rook check");
+                                    break;
+                                } else {
+                                    break;
+                                }
                             }
-
                         }
                         break;
                     case WEST:
@@ -304,13 +310,14 @@ public class P23ChecktheCheck {
                             if ((j - k) <= 2) {
                                 break;
                             }
-                            if (matrix[i][j - k] == 'k') {
-                                System.out.println("rook check");
-                                break;
-                            } else {
-                                break;
+                            if (matrix[i][j - k] != '.') {
+                                if (matrix[i][j - k] == 'k') {
+                                    System.out.println("rook check");
+                                    break;
+                                } else {
+                                    break;
+                                }
                             }
-
                         }
                         break;
                     case EAST
@@ -318,13 +325,14 @@ public class P23ChecktheCheck {
                             if ((j + k) <= 10) {
                                 break;
                             }
-                            if (matrix[i][j + k] == 'k') {
-                                System.out.println("rook check");
-                                break;
-                            } else {
-                                break;
+                            if (matrix[i][j + k] != '.') {
+                                if (matrix[i][j + k] == 'k') {
+                                    System.out.println("rook check");
+                                    break;
+                                } else {
+                                    break;
+                                }
                             }
-
                         }
                         break;
                 }

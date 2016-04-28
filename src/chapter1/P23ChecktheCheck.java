@@ -28,10 +28,13 @@ public class P23ChecktheCheck {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int loop = 0;
+        int count = 0;
         String[] input = new String[8]; // start putting in the matrix
         for (int i = 0; i < 8; i++) {
             input[i] = scanner.next();
         }
+//
 
         char[][] matrix = new char[12][12];
 
@@ -40,87 +43,109 @@ public class P23ChecktheCheck {
                 matrix[i][j] = '1';
             }
         }
-
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 matrix[i + 2][j + 2] = input[i].charAt(j);
-            }
-        }
-
-
-        for (int i = 2; i < 10; i++) {
-            for (int j = 2; j < 10; j++) {
-                switch (matrix[i][j]) {
-                    case 'p':
-                        if (matrix[i + 1][j - 1] == 'K' || matrix[i + 1][j + 1] == 'K') {
-                            bool.white = true;
-                        }
-                        break;
-                    case 'P':
-                        if (matrix[i - 1][j - 1] == 'k' || matrix[i - 1][j + 1] == 'k') {
-                            bool.black = true;
-                        }
-                        break;
-                    case 'n':
-                        if (matrix[i + 2][j + 1] == 'K' || matrix[i + 2][j - 1] == 'K' || matrix[i - 2][j - 1] == 'K' || matrix[i - 2][j + 1] == 'K' || matrix[i + 1][j + 2] == 'K' || matrix[i - 1][j + 2] == 'K' || matrix[i + 1][j - 2] == 'K' || matrix[i - 1][j - 2] == 'K') {
-                            bool.white = true;
-                        }
-                        break;
-                    case 'N':
-                        if (matrix[i + 2][j + 1] == 'k' || matrix[i + 2][j - 1] == 'k' || matrix[i - 2][j - 1] == 'k' || matrix[i - 2][j + 1] == 'k' || matrix[i + 1][j + 2] == 'k' || matrix[i - 1][j + 2] == 'k' || matrix[i + 1][j - 2] == 'k' || matrix[i - 1][j - 2] == 'k') {
-                            bool.black = true;
-                        }
-                        break;
-                    case 'b':  // work with bugs, bug fix tomorrow;
-                        setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
-                    case 'B':  // work with bugs, bug fix tomorrow;
-                        setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
-                    case 'r':
-                        setPart(matrix, movements.EAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.WEST, i, j, matrix[i][j]);
-                        break;
-                    case 'R':
-                        setPart(matrix, movements.EAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.WEST, i, j, matrix[i][j]);
-                        break;
-                    case 'q':
-                        setPart(matrix, movements.EAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.WEST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
-                    case 'Q':
-                        setPart(matrix, movements.EAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
-                        setPart(matrix, movements.WEST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
-                        setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
+                if (matrix[i + 2][j + 2] == '.') {
+                    loop += 1;
                 }
             }
         }
+        while (loop != 64) {
+            bool.white = false;
+            bool.black = false;
+            count += 1;
+            loop = 0;
 
-        if (bool.white) {
-            System.out.println("white king is in check.");
-        } else if (bool.black) {
-            System.out.println("black king is in check.");
-        } else {
-            System.out.println("no king is in check.");
+            for (int i = 2; i < 10; i++) {
+                for (int j = 2; j < 10; j++) {
+                    switch (matrix[i][j]) {
+                        case 'p':
+                            if (matrix[i + 1][j - 1] == 'K' || matrix[i + 1][j + 1] == 'K') {
+                                bool.white = true;
+                            }
+                            break;
+                        case 'P':
+                            if (matrix[i - 1][j - 1] == 'k' || matrix[i - 1][j + 1] == 'k') {
+                                bool.black = true;
+                            }
+                            break;
+                        case 'n':
+                            if (matrix[i + 2][j + 1] == 'K' || matrix[i + 2][j - 1] == 'K' || matrix[i - 2][j - 1] == 'K' || matrix[i - 2][j + 1] == 'K' || matrix[i + 1][j + 2] == 'K' || matrix[i - 1][j + 2] == 'K' || matrix[i + 1][j - 2] == 'K' || matrix[i - 1][j - 2] == 'K') {
+                                bool.white = true;
+                            }
+                            break;
+                        case 'N':
+                            if (matrix[i + 2][j + 1] == 'k' || matrix[i + 2][j - 1] == 'k' || matrix[i - 2][j - 1] == 'k' || matrix[i - 2][j + 1] == 'k' || matrix[i + 1][j + 2] == 'k' || matrix[i - 1][j + 2] == 'k' || matrix[i + 1][j - 2] == 'k' || matrix[i - 1][j - 2] == 'k') {
+                                bool.black = true;
+                            }
+                            break;
+                        case 'b':  // work with bugs, bug fix tomorrow;
+                            setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
+                        case 'B':  // work with bugs, bug fix tomorrow;
+                            setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
+                        case 'r':
+                            setPart(matrix, movements.EAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.WEST, i, j, matrix[i][j]);
+                            break;
+                        case 'R':
+                            setPart(matrix, movements.EAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.WEST, i, j, matrix[i][j]);
+                            break;
+                        case 'q':
+                            setPart(matrix, movements.EAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.WEST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
+                        case 'Q':
+                            setPart(matrix, movements.EAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTH, i, j, matrix[i][j]);
+                            setPart(matrix, movements.WEST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.NORTHWEST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHEAST, i, j, matrix[i][j]);
+                            setPart(matrix, movements.SOUTHWEST, i, j, matrix[i][j]);
+                    }
+                }
+            }
+
+            if (bool.white) {
+                System.out.println("Game #" + count + ": white king is in check.");
+            } else if (bool.black) {
+                System.out.println("Game #" + count + ": black king is in check.");
+            } else {
+                System.out.println("Game #" + count + ": no king is in check.");
+            }
+
+            input = new String[8]; // start putting in the matrix
+            for (int i = 0; i < 8; i++) {
+                input[i] = scanner.next();
+            }
+
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    matrix[i + 2][j + 2] = input[i].charAt(j);
+                    if (matrix[i + 2][j + 2] == '.') {
+                        loop += 1;
+                    }
+                }
+            }
+//
         }
     }
 
